@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Cricket Fun</title>
     <script src="https://www.gstatic.com/firebasejs/live/3.6/firebase.js"></script>
     <script src="config.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-      <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
-<script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
-      <script src="ipl.json"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+    <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <script src="ipl.json"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="container">
-      <h3>Play IPL</h3>
-      <div id="loading">Loading...</div>
-      <div id="loaded" class="hidden">
-        <div id="main">
-          <div id="user-signed-in" class="hidden">
-            <div id="user-info">
-              <div id="photo-container">
-                <img id="photo"></img>
-              </div>
-              <div id="name"></div>
-              <div id="email"></div>
-              <div class="clearfix"></div>
+        <h3>Play IPL</h3>
+        <div id="loading">Loading...</div>
+        <div id="loaded" class="hidden">
+            <div id="main">
+                <div id="user-signed-in" class="hidden">
+                    <div id="user-info">
+                        <div id="photo-container">
+                            <img id="photo"></img>
+                        </div>
+                        <div id="name"></div>
+                        <div id="email"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <p>
+                        <button id="sign-out">Sign Out</button>
+                        <button id="delete-account">Delete account</button>
+                    </p>
+                </div>
+                <div id="user-signed-out" class="hidden">
+                    <h4>You are signed out.</h4>
+                    <p class="hidden">
+                        <button id="sign-in-with-redirect">Sign In with Redirect</button>
+                        <button id="sign-in-with-popup">Sign In with Popup</button>
+                    </p>
+                    <div id="firebaseui-spa">
+                        <div id="firebaseui-container"></div>
+                    </div>
+
+                </div>
+
+
+                <br><br>
+                <div id="main-container">
+                    <h1>Today's Matches</h1>
+                    <div id="ipl-matches"></div>
+                </div>
             </div>
-            <p>
-              <button id="sign-out">Sign Out</button>
-              <button id="delete-account">Delete account</button>
-            </p>
-          </div>
-          <div id="user-signed-out" class="hidden">
-            <h4>You are signed out.</h4>
-            <p class="hidden">
-              <button id="sign-in-with-redirect">Sign In with Redirect</button>
-              <button id="sign-in-with-popup">Sign In with Popup</button>
-            </p>
-            <div id="firebaseui-spa">
-              <div id="firebaseui-container"></div>
-            </div>
-              
-          </div>
-          
-          
-                        <br><br>
-              <div id="main-container">
-              <h1>Today's Matches</h1>
-                  <div id="ipl-matches"></div>
-              </div>
         </div>
-      </div>
     </div>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>

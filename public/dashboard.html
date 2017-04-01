@@ -1,78 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Cricket Fun </title>
 
-      <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/live/3.6/firebase.js"></script>
-        <script src="config.js"></script>
-        <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-        <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+    <script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.6/firebase.js"></script>
+    <script src="config.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
     <script type="text/javascript">
-      initApp = function() {
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            // User is signed in.
-              
-        //get score from cric API
-              var matchInfo = '';
-              $.get("https://cricapi.com/api/cricket?apikey=m3nICsaHjSZuGMiEIQZJYbW2VE03", function(matchdata) {
-                matchdata.data.forEach(function(md) {
-                    console.log(md.description + " - to grab more details, simply use the unique_id " + md.unique_id + " with the cricketScore api!");
-                    matchInfo += md.description + "<br><br>";
-                });
-                  if(typeof matchInfo !=='undefined') {
-                    document.getElementById('account-details').innerHTML = matchInfo;
-                  }
-            });
-              
-              
-              
-//            var displayName = user.displayName;
-//            var email = user.email;
-//            var emailVerified = user.emailVerified;
-//            var photoURL = user.photoURL;
-//            var uid = user.uid;
-//            var providerData = user.providerData;
-//            user.getToken().then(function(accessToken) {
-//              document.getElementById('sign-in-status').textContent = 'Signed in';
-//              document.getElementById('sign-in').textContent = 'Sign out';
-//              document.getElementById('account-details').textContent = JSON.stringify({
-//                displayName: displayName,
-//                email: email,
-//                emailVerified: emailVerified,
-//                photoURL: photoURL,
-//                uid: uid,
-//                accessToken: accessToken,
-//                providerData: providerData
-//              }, null, '  ');
-                
-                
-                
-//            });
-          } else {
-            // User is signed out.
-              window.location.href = '/widget';
-            document.getElementById('sign-in-status').textContent = 'Signed out';
-            document.getElementById('sign-in').textContent = 'Sign in';
-            document.getElementById('account-details').textContent = 'null';
-          }
-        }, function(error) {
-          console.log(error);
-        });
-      };
+        initApp = function() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
 
-      window.addEventListener('load', function() {
-        initApp()
-      });
+                    //get score from cric API
+                    var matchInfo = '';
+                    $.get("https://cricapi.com/api/cricket?apikey=m3nICsaHjSZuGMiEIQZJYbW2VE03", function(matchdata) {
+                        matchdata.data.forEach(function(md) {
+                            console.log(md.description + " - to grab more details, simply use the unique_id " + md.unique_id + " with the cricketScore api!");
+                            matchInfo += md.description + "<br><br>";
+                        });
+                        if (typeof matchInfo !== 'undefined') {
+                            document.getElementById('account-details').innerHTML = matchInfo;
+                        }
+                    });
+
+
+
+                    //            var displayName = user.displayName;
+                    //            var email = user.email;
+                    //            var emailVerified = user.emailVerified;
+                    //            var photoURL = user.photoURL;
+                    //            var uid = user.uid;
+                    //            var providerData = user.providerData;
+                    //            user.getToken().then(function(accessToken) {
+                    //              document.getElementById('sign-in-status').textContent = 'Signed in';
+                    //              document.getElementById('sign-in').textContent = 'Sign out';
+                    //              document.getElementById('account-details').textContent = JSON.stringify({
+                    //                displayName: displayName,
+                    //                email: email,
+                    //                emailVerified: emailVerified,
+                    //                photoURL: photoURL,
+                    //                uid: uid,
+                    //                accessToken: accessToken,
+                    //                providerData: providerData
+                    //              }, null, '  ');
+
+
+
+                    //            });
+                } else {
+                    // User is signed out.
+                    window.location.href = '/widget';
+                    document.getElementById('sign-in-status').textContent = 'Signed out';
+                    document.getElementById('sign-in').textContent = 'Sign in';
+                    document.getElementById('account-details').textContent = 'null';
+                }
+            }, function(error) {
+                console.log(error);
+            });
+        };
+
+        window.addEventListener('load', function() {
+            initApp()
+        });
+
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>Play Cricket</h1>
     <div id="sign-in-status"></div>
     <div id="sign-in"></div>
     <div id="account-details"></div>
-  </body>
+</body>
+
 </html>
