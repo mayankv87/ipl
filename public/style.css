@@ -1,0 +1,76 @@
+Skip to content
+Features Business Explore Pricing
+This repository
+Search
+Sign in or Sign up
+ Watch 110  Star 498  Fork 123 firebase/firebaseui-web
+ Code  Issues 42  Pull requests 0  Projects 0  Pulse  Graphs
+Branch: master Find file Copy pathfirebaseui-web/demo/public/style.css
+76110f5  on Nov 2, 2016
+@a-googler a-googler List of included changes:
+1 contributor
+RawBlameHistory     
+52 lines (43 sloc)  589 Bytes
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#container {
+  text-align: center;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+#user-info {
+  border: 1px solid #CCC;
+  clear: both;
+  margin: 0 auto 20px;
+  max-width: 400px;
+  padding: 10px;
+  text-align: left;
+}
+
+#photo-container {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  float: left;
+  height: 80px;
+  margin-right: 10px;
+  width: 80px;
+}
+
+#photo {
+  height: 80px;
+  margin: 0;
+  width: 80px;
+}
+
+@media (max-width: 300px) {
+  #photo-container,
+  #photo {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
+
+table, th, td {
+   border: 1px solid black;
+}

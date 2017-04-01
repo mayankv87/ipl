@@ -1,0 +1,35 @@
+var iplMatches =
+{
+    "matches":[
+    {
+        "date": "5-04-2017",
+        "match":"MUM vs KKR",
+        "teamA": "MUM",
+        "teamB": "KKR"
+    },
+    {
+        "date": "5-04-2017",
+        "match":"CSK vs Pune",
+        "teamA": "CSK",
+        "teamB": "PUNE"
+    },
+    {
+        "date": "6-04-2017",
+        "match":"MUM vs HYD",
+        "teamA": "MUM",
+        "teamB": "HYD"
+        
+    },
+    {
+        "date": "7-04-2017",
+        "match":"CSK vs KKR",
+        "teamA": "CSK",
+        "teamB": "KKR"
+    },
+    {
+        "date": "7-04-2017",
+        "match":"MUM vs KKR",
+        "teamA": "MUM",
+        "teamB": "KKR"
+    }
+]};
